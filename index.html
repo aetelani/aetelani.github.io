@@ -20,5 +20,8 @@
   <p>Obvious solution to implement DSL with Golang would be using CGo. Use Go to call C function that calls Haskell function. Result would be C type or socket for communication and streaming. Ducktape ie. Golang/channels|mutexes/Goroutine/CGo/<dsl> would seem like doable taping and natural usage of Golang. </p>
   <h3>Go approach</h3>
   <p>When I said Golang is not DSL frienly language; that was not perfectly true. Golang provides different methods to being generic. Methods like reflection, interfaces and tooling for code generation. go generate was introduced and that can be used to instruct processing source files. Most simple example is using sed to modify type names in files and use those as sort of generics. Golang also provides go/ast package to parse syntax trees from files.. So it is kind of quite DSL frienly from toolchain point of view. The philosophy is just different; like composition (~declarative) over inheritance. In the sense generataing source files is declarative (and probably recommended) way to provide generics or implement metaprogramming concepts. I was stubmled some related projects such goast etc. Using golang as metalangueage has one significant advantage; not depending third party languages or plugins.</p> 
+  <h2>Golang Improvement ideas</h2>
+  <p>Improve goroutine synchronization by providing implied Context and extend SELECT statement with optional CASE <signal> WHEN [NOT] <signal> AND/OR <signal> : statements<p/>
+  <p>This syntax would make possible to guard case clauses with notation that denote if other conditions have been met and only then this would be active case. Use case would be synchrinizing multiple goroutines with clear and expressive syntax.</p>
   </body>
 </html> 
